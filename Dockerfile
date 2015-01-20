@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y php5 php5-mysql ssh git
 
 # set up oci library for php
 RUN cd /tmp; sudo wget http://oss.oracle.com/el4/RPM-GPG-KEY-oracle
-RUN sudo apt-key add R/tmp/PM-GPG-KEY-oracle
+RUN sudo apt-key add /tmp/PM-GPG-KEY-oracle
 RUN echo "deb http://oss.oracle.com/debian unstable main non-free" >> sources.list
 RUN sudo apt-get update
 
