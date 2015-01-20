@@ -14,13 +14,12 @@ RUN su -; dd if=/dev/zero of=tmpswap bs=1M count=1000
 RUN chmod 600 tmpswap; mkswap tmpswap; swapon tmpswap
 
 # Oracle instant client prerequisite
-RUN apt-get install libaio1
-ADD oracle-instantclient12.1-basic-12.1.0.1.0-1.i386.rpm /tmp
-RUN alien -di /tmp/oracle-instantclient12.1-basic-12.1.0.1.0-1.i386.rpm
-RUN alien -di /tmp/oracle-instantclient12.1-basic-12.1.0.1.0-1.i386.rpm<
+RUN apt-get install -y libaio1
+ADD oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm /tmp
+RUN apt-get install -y alien
+RUN alien -di /tmp/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
+RUN alien -di /tmp/oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm<
 RUN export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client/lib:${LD_LIBRARY_PATH}
-
-
 
 # Install oci prerequisite for php5
 RUN apt-get install -y php-pear php5-dev build-essential oracle-xe-client
@@ -35,7 +34,7 @@ RUN echo "extension=oci8.so" >> /etc/php5/cli/php.ini
 # Restart apache
 RUN sudo /etc/init.d/apache2 restart
 
-ENV PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/bin
+ENV PATH $PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/bin
 
 ADD tnsnames.ora /etc
 
