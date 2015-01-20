@@ -8,3 +8,5 @@ Steps
  - Install/configure php5
  - Install/configure oci8 for php : http://php.net/manual/fr/oci8.installation.php
  - Install/configure oracle instant client
+  
+ !!! WORK IN PROGRESS !!!
