@@ -2,6 +2,10 @@
 
 Inspired from http://oracletogit.ru/install-oracletogit/
 
+'''
+We don’t recommend installing this tool for production database – it may have some impact both on security and performance. However, this is very useful for developer database – you will never lose any cool code again!
+'''
+
 Steps
 
  - Install/configure Ubuntu/Apache
