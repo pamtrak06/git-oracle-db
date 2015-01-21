@@ -10,8 +10,8 @@ RUN echo "deb http://oss.oracle.com/debian unstable main non-free" >> sources.li
 RUN sudo apt-get update
 
 # Install Oracle InstantClient
-RUN su -; dd if=/dev/zero of=tmpswap bs=1M count=1000
-RUN chmod 600 tmpswap; sudo mkswap tmpswap; sudo swapon tmpswap
+#RUN su -; dd if=/dev/zero of=tmpswap bs=1M count=1000
+#RUN chmod 600 tmpswap; sudo mkswap tmpswap; sudo swapon tmpswap
 
 # Oracle instant client prerequisite
 RUN apt-get install -y libaio1
